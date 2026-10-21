@@ -3,6 +3,7 @@
 
 pub mod config;
 pub mod crypto;
+pub mod login_fields;
 pub mod model;
 pub mod paths;
 pub mod process;

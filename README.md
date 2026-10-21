@@ -1,7 +1,7 @@
 # Riot Account Manager
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=flat-square&logo=github)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient)
-[![Release](https://img.shields.io/badge/Release-v3.1.0-green?style=flat-square)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient/releases)
+[![Release](https://img.shields.io/badge/Release-v3.2.0-green?style=flat-square)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient/releases)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![Tauri](https://img.shields.io/badge/Tauri-2.x-24C8DB?style=flat-square&logo=tauri)](https://tauri.app/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev/)
@@ -142,6 +142,13 @@ npm run test      # cargo test -p ram-core
 Phát hành theo giấy phép **MIT** — xem file [LICENSE](LICENSE) để biết chi tiết.
 
 ## Changelog
+
+### v3.2.0
+
+- Auto-login không còn click theo tỉ lệ cửa sổ / pixel cố định (lệch DPI, size, bản Riot).
+- Tìm ô username/password qua Windows UI Automation (cây accessibility thật của Riot Client).
+- Fallback bàn phím nếu form chưa lộ trong accessibility tree.
+- Focus cửa sổ Riot bằng Win32 (bỏ PowerShell); không nhận nhầm cửa sổ app.
 
 ### v3.1.0
 

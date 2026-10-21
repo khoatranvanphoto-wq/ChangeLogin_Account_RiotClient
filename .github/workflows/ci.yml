@@ -49,6 +49,29 @@ jobs:
       - name: Rust core check
         run: npm run check:rust
 
+  rust-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: app-tauri
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            app-tauri/target
+          key: ${{ runner.os }}-ram-core-${{ hashFiles('app-tauri/Cargo.lock') }}
+
+      - name: Rust core tests (Windows APIs)
+        run: cargo test -p ram-core
+
   doctor:
     runs-on: ubuntu-latest
     steps:

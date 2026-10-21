@@ -12,9 +12,8 @@ môi trường phát triển (CI/agent chạy Linux, không có Riot Client + kh
 
 | Hạng mục | Trạng thái | Cần làm |
 |---|---|---|
-| `auto_login` (enigo gõ phím/chuột) | Code xong, **chưa test Windows** | Chạy thử với Riot Client thật |
-| Tọa độ click + **DPI scaling** với enigo | Dùng pixel vật lý từ Win32 | Xác minh ở 100/125/150% scaling |
-| `focus_riot_client_window` / measure (PowerShell) | Port từ Java (đã chạy ở bản Java) | Xác minh lại trên Windows |
+| `auto_login` (UI Automation + bàn phím) | Không còn click theo tỉ lệ cửa sổ | Chạy thử với Riot Client thật |
+| `focus_riot_client_window` (Win32) | Native, không PowerShell | Xác minh lại trên Windows |
 | DPAPI protect/unprotect | Code xong, build OK | Test trên Windows (ghi/đọc accounts.dat) |
 | Startup registry (HKCU Run) | Code xong | Bật/tắt + kiểm tra khởi động lại |
 | NSIS `.exe` / WiX `.msi` build | Qua CI windows-latest | Chạy CI tạo artifact thật |
@@ -23,14 +22,12 @@ môi trường phát triển (CI/agent chạy Linux, không có Riot Client + kh
 > Tauri), `cargo test -p ram-core` (8/8, gồm tương thích dữ liệu Java byte-for-byte), và
 > `npm run build` (TypeScript strict + Vite). Phần Windows-only chỉ verify được ở mức biên dịch.
 
-## 2. DPI / enigo có thể lệch so với Java Robot
+## 2. Auto-login không còn phụ thuộc pixel (v3.2.0)
 
-- Java `Robot` dùng tọa độ **logic** (đã chia theo scale) → bản Java bù DPI bằng
-  `getDefaultTransform`. `enigo` trên Windows dùng tọa độ **pixel vật lý**.
-- Hiện tại `riot.rs` đưa thẳng pixel vật lý từ `GetClientRect/ClientToScreen` vào enigo
-  (đúng về lý thuyết cho enigo). **Nhưng chưa kiểm chứng** ở các mức scaling khác nhau.
-- **Giải pháp dự phòng nếu lệch**: thêm bù tỉ lệ theo `GetDpiForWindow`/`GetScaleFactorForMonitor`
-  hoặc cho phép người dùng tinh chỉnh offset trong Settings.
+- v3.2.0 tìm ô username/password qua **Windows UI Automation**, rồi gõ phím.
+- Click chuột chỉ khi UIA trả về hình chữ nhật **của chính control đó** (không dùng %).
+- Nếu Riot Client chưa lộ accessibility tree: fallback Tab/gõ, không click theo layout.
+- Vẫn cần Riot Client đang ở **màn hình đăng nhập** (chưa vào client đã login).
 
 ## 3. Reset preferences khi nâng cấp từ bản Java
 
