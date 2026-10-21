@@ -9,8 +9,8 @@ use std::time::Duration;
 use windows::Win32::Foundation::{BOOL, HWND, LPARAM, RECT, WPARAM};
 use windows::Win32::UI::WindowsAndMessaging::{
     BringWindowToTop, EnumWindows, GetForegroundWindow, GetWindowRect, GetWindowTextW,
-    GetWindowThreadProcessId, IsIconic, IsWindowVisible, SendMessageW, SetActiveWindow,
-    SetForegroundWindow, ShowWindow, SW_RESTORE, SW_SHOW, WM_GETOBJECT,
+    GetWindowThreadProcessId, IsIconic, IsWindowVisible, SendMessageW, SetForegroundWindow,
+    ShowWindow, SW_RESTORE, SW_SHOW, WM_GETOBJECT,
 };
 
 const TARGET_PROCESSES: &[&str] = &[
@@ -238,7 +238,7 @@ fn collect_edit_elements(
         let condition = automation
             .CreatePropertyCondition(
                 UIA_ControlTypePropertyId,
-                VARIANT::from(UIA_EditControlTypeId.0),
+                &VARIANT::from(UIA_EditControlTypeId.0),
             )
             .map_err(|e| format!("CreatePropertyCondition: {e}"))?;
         let array = root
@@ -416,7 +416,6 @@ unsafe fn force_foreground(hwnd: HWND) -> bool {
 
     let _ = BringWindowToTop(hwnd);
     let ok = SetForegroundWindow(hwnd).as_bool();
-    let _ = SetActiveWindow(hwnd);
 
     if fg_tid != 0 && fg_tid != target_tid {
         let _ = AttachThreadInput(fg_tid, target_tid, false);
