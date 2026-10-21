@@ -5,6 +5,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
   vi: {
     "app.title": "Riot Account Manager",
     "account.list.title": "Danh sách tài khoản",
+    "account.list.empty": "Chưa có tài khoản. Bấm Thêm để lưu tài khoản đầu tiên.",
     "account.table.username": "Username",
     "account.table.region": "Region",
     "account.table.note": "Ghi chú",
@@ -52,7 +53,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     "login.progress.ready": "Riot Client đã sẵn sàng, đang đăng nhập...",
     "login.success": "Đã điền thông tin đăng nhập! Kiểm tra và bấm Enter để đăng nhập.",
     "login.success.submitted": "Đã điền và gửi thông tin đăng nhập!",
-    "login.failed.details": "Không thể đăng nhập tự động. Hãy đảm bảo Riot Client đang hiển thị màn hình đăng nhập.",
+    "login.failed.details": "Không thể đăng nhập tự động. Để Riot Client ở màn hình Sign in (chưa đăng nhập).",
     "login.status.title": "Đang đăng nhập",
     "login.status.message": "Bạn đang đăng nhập bằng tài khoản:",
     "login.status.hint": "Không cần đăng nhập lại.",
@@ -125,6 +126,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
   en: {
     "app.title": "Riot Account Manager",
     "account.list.title": "Account List",
+    "account.list.empty": "No accounts yet. Use Add to save the first one.",
     "account.table.username": "Username",
     "account.table.region": "Region",
     "account.table.note": "Note",
@@ -172,7 +174,7 @@ export const STRINGS: Record<Lang, Record<string, string>> = {
     "login.progress.ready": "Riot Client is ready, logging in...",
     "login.success": "Credentials filled! Review and press Enter to log in.",
     "login.success.submitted": "Credentials filled and submitted!",
-    "login.failed.details": "Could not auto login. Make sure the Riot Client login screen is visible.",
+    "login.failed.details": "Could not auto login. Keep Riot Client on the Sign in screen.",
     "login.status.title": "Signed In",
     "login.status.message": "You are signed in with the account:",
     "login.status.hint": "No need to sign in again.",

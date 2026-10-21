@@ -1,7 +1,7 @@
 {
   "name": "riot-account-manager-workspace",
   "private": true,
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Riot Account Manager — Tauri + React workspace root",
   "scripts": {
     "postinstall": "npm install --prefix app-tauri",

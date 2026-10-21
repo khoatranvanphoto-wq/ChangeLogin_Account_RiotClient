@@ -2762,7 +2762,7 @@ checksum = "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
 
 [[package]]
 name = "ram-core"
-version = "3.2.0"
+version = "3.3.0"
 dependencies = [
  "aes",
  "base64 0.22.1",
@@ -2910,7 +2910,7 @@ dependencies = [
 
 [[package]]
 name = "riot-account-manager"
-version = "3.2.0"
+version = "3.3.0"
 dependencies = [
  "log",
  "ram-core",

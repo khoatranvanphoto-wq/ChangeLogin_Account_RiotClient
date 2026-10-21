@@ -1,7 +1,7 @@
 # Riot Account Manager
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=flat-square&logo=github)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient)
-[![Release](https://img.shields.io/badge/Release-v3.2.0-green?style=flat-square)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient/releases)
+[![Release](https://img.shields.io/badge/Release-v3.3.0-green?style=flat-square)](https://github.com/DangNghia17/ChangeLogin_Account_RiotClient/releases)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![Tauri](https://img.shields.io/badge/Tauri-2.x-24C8DB?style=flat-square&logo=tauri)](https://tauri.app/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev/)
@@ -142,6 +142,11 @@ npm run test      # cargo test -p ram-core
 Phát hành theo giấy phép **MIT** — xem file [LICENSE](LICENSE) để biết chi tiết.
 
 ## Changelog
+
+### v3.3.0
+
+- Auto-login trên Riot Client CEF (cửa sổ D3D): dò ô username thật rồi điền, không còn “chỉ focus rồi dừng”.
+- Giao diện desktop gọn: graphite + copper, command bar, không gradient tím.
 
 ### v3.2.0
 

@@ -25,7 +25,7 @@ export function AccountTable({ accounts, selected, loggedInUsername, onSelect, o
         <tbody>
           {accounts.length === 0 ? (
             <tr>
-              <td colSpan={3} className="empty-row">—</td>
+              <td colSpan={3} className="empty-row">{t("account.list.empty")}</td>
             </tr>
           ) : (
             accounts.map((a, i) => (
