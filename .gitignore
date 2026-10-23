@@ -1,37 +1,6 @@
-# Log files
-*.log
-
-# Package archives (local)
-*.jar
-*.war
-*.zip
-*.tar.gz
-*.rar
-
-# IDE
-.idea/
-*.iml
-*.iws
-*.ipr
-.vscode/
-.classpath
-.project
-.settings/
-bin/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Application data (sensitive - never commit)
-accounts.dat
-config.json
-%LOCALAPPDATA%/RiotAccountManager/
-
-# Node / Tauri (app-tauri)
 node_modules/
-app-tauri/node_modules/
-app-tauri/dist/
-app-tauri/target/
-app-tauri/target/
-app-tauri/RiotAccountManager-portable.zip
+dist/
+target/
+src-tauri/gen/
+*.log
+.DS_Store

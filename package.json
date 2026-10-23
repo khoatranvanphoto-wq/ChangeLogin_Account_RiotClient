@@ -1,22 +1,30 @@
 {
-  "name": "riot-account-manager-workspace",
+  "name": "game-account-switcher",
   "private": true,
-  "version": "3.3.0",
-  "description": "Riot Account Manager — Tauri + React workspace root",
+  "version": "4.0.0",
+  "type": "module",
   "scripts": {
-    "postinstall": "npm install --prefix app-tauri",
-    "dev": "npm run web --prefix app-tauri",
-    "web": "npm run web --prefix app-tauri",
-    "tauri:dev": "npm run tauri:dev --prefix app-tauri",
-    "tauri:build": "npm run tauri:build --prefix app-tauri",
-    "build": "npm run build --prefix app-tauri",
-    "preview": "npm run preview --prefix app-tauri",
-    "check": "npm run check --prefix app-tauri",
-    "lint": "npm run lint --prefix app-tauri",
-    "test": "npm run test --prefix app-tauri",
-    "doctor": "node scripts/doctor.mjs"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "typecheck": "tsc --noEmit",
+    "test:core": "cargo test -p gas-core"
   },
-  "engines": {
-    "node": ">=18"
+  "dependencies": {
+    "@tauri-apps/api": "^2.1.1",
+    "@tauri-apps/plugin-dialog": "^2.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   }
 }
