@@ -1,0 +1,40 @@
+[package]
+name = "gas-core"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+license = { workspace = true }
+description = "Core logic for Game Account Switcher: storage, encryption, Riot and Garena switching"
+
+[lib]
+name = "gas_core"
+path = "src/lib.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+base64 = { workspace = true }
+log = { workspace = true }
+aes-gcm = "0.10"
+pbkdf2 = "0.12"
+sha2 = "0.10"
+getrandom = "0.2"
+# Reading data from the old Java/v3 app.
+aes = "0.8"
+ecb = "0.1"
+
+[target.'cfg(windows)'.dependencies]
+enigo = "0.2"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_Security_Cryptography",
+    "Win32_System_Com",
+    "Win32_System_DataExchange",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Memory",
+    "Win32_System_Threading",
+    "Win32_UI_Accessibility",
+    "Win32_UI_HiDpi",
+    "Win32_UI_WindowsAndMessaging",
+] }
